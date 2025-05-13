@@ -5,7 +5,8 @@ services:
   server:
     # build: ./server
     # To replace with the correct path of your server image
-    image: dockerhub-melissameirsman/wns-deploy-server
+    image: melissameirsman/wns-deploy-server
+
     command: sh -c "npm run build && npm run prod"
     expose:
       - 5000
@@ -17,7 +18,7 @@ services:
   client:
     # build: ./client
     # To replace with the correct path of your client image
-    image: dockerhub-melissameirsman/wns-deploy-client
+    image: melissameirsman/wns-deploy-client
     command: sh -c "npm run build"
     volumes:
       - web-client-build:/app/build
